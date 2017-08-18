@@ -1,0 +1,102 @@
+\documentclass[
+10pt, % Main document font size
+a4paper, % Paper type, use 'letterpaper' for US Letter paper
+oneside, % One page layout (no page indentation)
+%twoside, % Two page layout (page indentation for binding and different headers)
+headinclude,footinclude, % Extra spacing for the header and footer
+BCOR5mm, % Binding correction
+]{scrartcl}
+
+\input{structure.tex} % Include the structure.tex file which specified the document structure and layout
+
+%% \hyphenation{Fortran hy-phen-ation} 
+
+\title{\normalfont\spacedallcaps{Desain dan Implementasi Aplikasi IoT Untuk Sensor Cuaca}}
+
+%\subtitle{Subtitle} 
+
+\author{\spacedlowsmallcaps{Budi Rahardjo*}} 
+
+%% \date{} 
+
+\begin{document}
+
+\renewcommand{\sectionmark}[1]{\markright{\spacedlowsmallcaps{#1}}} % The header for all pages (oneside) or for even pages (twoside)
+%\renewcommand{\subsectionmark}[1]{\markright{\thesubsection~#1}} % Uncomment when using the twoside option - this modifies the header on odd pages
+\lehead{\mbox{\llap{\small\thepage\kern1em\color{halfgray} \vline}\color{halfgray}\hspace{0.5em}\rightmark\hfil}} % The header style
+
+\pagestyle{scrheadings} % Enable the headers specified in this block
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS & LISTS OF FIGURES AND TABLES
+%----------------------------------------------------------------------------------------
+
+\maketitle % Print the title/author/date block
+
+\setcounter{tocdepth}{2} % Set the depth of the table of contents to show sections and subsections only
+
+\tableofcontents % Print the table of contents
+\listoffigures % Print the list of figures
+\listoftables % Print the list of tables
+
+%	ABSTRACT
+
+\section*{Abstrak} 
+Makalah ini menjabarkan desain dan implementasi IoT untuk aplikasi sensor cuaca.
+
+%	AUTHOR AFFILIATIONS
+
+\let\thefootnote\relax\footnotetext{* \textit{Institut Teknologi Bandung}}
+
+
+\newpage % Start the article content on the second page, 
+
+
+\section{Pendahuluan}
+Salah satu aplikasi IoT ({\em Internet of Things}) yang paling mudah
+diimplementasikan adalah sensor cuaca. Sudah ada banyak tutorial tersedia untuk
+aplikasi seperti ini, tetapi pembahasan yang lebih rinci mengenai desain dan
+implementasinya belum tersedia.
+
+\section{Boards}
+Salah satu komponen utama dari IoT adalah {\em development boards} yang
+digunakan sebagai basis. {\em Board} yang paling banyak digunakan adalah
+Arduino\footnote{Informasi mengenai Arduino tersedia di situs arduino.cc.}.
+Kesuksesan dari Arduino adalah keterbukaan desain dari {\em board} (hardware)
+dan software (dalam bentuk Arduino IDE).
+
+{\em Board} yang kemudian terkenal adalah board yang berbasis ESP8266.
+Kelebihan dari board berbasis ESP8266 adalah board tersebut sudah memiliki
+modul WiFi. Salah satu implementasi board ESP8266 yang terkenal adalah NodeMCU.
+Ada beberapa versi dari NodeMCU yang tersedia, misal dari Amica dan Wemos.
+Selain boards tersebut ada board buatan Indonesia, ESPectro, yang dikembangkan
+oleh DycodeX. Pada implementasi ini kami menggunakan NodeMCU dikarenakan
+ketersediaan komponen dan harganya yang relatif murah. Sebagai contoh, pada
+saat sistem dikembangkan NodeMCU Wemos D1 mini memiliki harga Rp.~55.000,-.
+
+[Foto NodeMCU]
+
+\section{Sensor}
+\subsection{DHT11}
+
+\section{Aplikasi}
+
+\paragraph{Paragraph Description} \lipsum[7] % Dummy text
+
+\paragraph{Different Paragraph Description} \lipsum[8] % Dummy text
+
+%------------------------------------------------
+
+\section{Penutup}
+
+
+%	BIBLIOGRAPHY
+
+\renewcommand{\refname}{\spacedlowsmallcaps{References}} % For modifying the bibliography heading
+
+\bibliographystyle{unsrt}
+
+\bibliography{referensi.bib} % The file containing the bibliography
+
+
+\end{document}
