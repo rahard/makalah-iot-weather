@@ -55,37 +55,61 @@ Makalah ini menjabarkan desain dan implementasi IoT untuk aplikasi sensor cuaca.
 \section{Pendahuluan}
 Salah satu aplikasi IoT ({\em Internet of Things}) yang paling mudah
 diimplementasikan adalah sensor cuaca. Sudah ada banyak tutorial tersedia untuk
-aplikasi seperti ini, tetapi pembahasan yang lebih rinci mengenai desain dan
-implementasinya belum tersedia.
+aplikasi seperti ini, tetapi pembahasan yang lebih rinci mengenai alasan-alasan
+dalam desain (design decisions) dan implementasinya belum tersedia. Kebanyakan
+tutorial yang ada hanya fokus kepada satu hal saja dan hanya pada tahap awal.
+
+Aplikasi yang dibahas pada makalah ini adalah sensor cuaca ({\em weather
+sensor}) yang akan digunakan di kota Bandung. Sistem ini nantinya dapat
+dikembangkan lebih lanjut untuk menjadi sensor lingkungan ({\em environment
+sensors}). Sistem ini dapat digunakan menjadi bagian dari sebuah {\em smart
+city}.
 
 \section{Boards}
 Salah satu komponen utama dari IoT adalah {\em development boards} yang
 digunakan sebagai basis. {\em Board} yang paling banyak digunakan adalah
 Arduino\footnote{Informasi mengenai Arduino tersedia di situs arduino.cc.}.
 Kesuksesan dari Arduino adalah keterbukaan desain dari {\em board} (hardware)
-dan software (dalam bentuk Arduino IDE).
+dan software (dalam bentuk Arduino IDE). Akibatnya banyak orang dapat
+memproduksi board Arduino dengan harga yang terjangkau.
 
 {\em Board} yang kemudian terkenal adalah board yang berbasis ESP8266.
 Kelebihan dari board berbasis ESP8266 adalah board tersebut sudah memiliki
-modul WiFi. Salah satu implementasi board ESP8266 yang terkenal adalah NodeMCU.
-Ada beberapa versi dari NodeMCU yang tersedia, misal dari Amica dan Wemos.
-Selain boards tersebut ada board buatan Indonesia, ESPectro, yang dikembangkan
-oleh DycodeX. Pada implementasi ini kami menggunakan NodeMCU dikarenakan
-ketersediaan komponen dan harganya yang relatif murah. Sebagai contoh, pada
-saat sistem dikembangkan NodeMCU Wemos D1 mini memiliki harga Rp.~55.000,-.
+modul WiFi (802.11 b/g/n, dengan WPA/WPA2), yang akan memudahkan dalam
+menghubungkan perangkat ini ke jaringan.  (Pembahasan mengenai aspek jaringan
+yang lebih rinci ada pada bagian terpisah.)
+
+Ada banyak implementasi dari board berbasis ESP8266 ini, antara lain dari
+Espressif, NodeMCU, ESPectro (dari DycodeX, sebuah perusahaan di Bandung), dan
+masih banyak lainnya. Kepopuleran dari board berbasis ESP8266 ini membuat
+harganya menjadi murah. Sebagai contoh, board WeMos D1 mini yang digunakan
+dalam sistem ini memiliki harga Rp.~55.000,-.
+
+Aspek harga sangat menentukan dalam pengembangan sebuah sistem. Untuk sistem
+dengan jumlah titik (node) yang sedikit, perbedaan harga tidaklah terlalu
+signifikan. Untuk sistem dengan jumlah titik (node) yang banyak, maka aspek
+harga sangat menentukan. Sebagai contoh untuk sistem dengan 1000
+titik~\footnote{Salah satu aplikasi yang terbayang adalah pemantauan dan
+pengendalian lampu penerangan jalan yang jumlahnya ratusan ribu.}, dimana
+masing-masing titik membutuhkan setidaknya satu board, perbedaan harga
+Rp.~10.000,- akan menjadikan beda sepuluh juta rupiah. Padahal ada board yang
+lebih bagus tetapi harganya berbeda cukup signifikan. Sebagai contoh, ada salah
+satu board yang berharga Rp.~300.000,- untuk satu unitnya. Harapannya tentu
+saja adalah harga ini akan turun sejalan dengan meningkatnya kemampuan
+teknologi dan jumlah pengguna.
+
 
 [Foto NodeMCU]
 
 \section{Sensor}
 \subsection{DHT11}
+\subsection{DHT22}
+
+\section{Jaringan}
 
 \section{Aplikasi}
-
-\paragraph{Paragraph Description} \lipsum[7] % Dummy text
-
-\paragraph{Different Paragraph Description} \lipsum[8] % Dummy text
-
-%------------------------------------------------
+\subsection{Sisi Sensor}
+\subsection{Sisi Server}
 
 \section{Penutup}
 
