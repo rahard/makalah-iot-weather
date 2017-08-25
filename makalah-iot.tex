@@ -65,6 +65,10 @@ dikembangkan lebih lanjut untuk menjadi sensor lingkungan ({\em environment
 sensors}). Sistem ini dapat digunakan menjadi bagian dari sebuah {\em smart
 city}.
 
+Sudah ada beberapa perangkat jadi untuk aplikasi ini. Sebagai contoh, salah
+satu perangkat yang digunakan sebagai pembanding adalah produk ini. (URL? dan
+foto.)
+
 \section{Boards}
 Salah satu komponen utama dari IoT adalah {\em development boards} yang
 digunakan sebagai basis. {\em Board} yang paling banyak digunakan adalah
@@ -94,20 +98,79 @@ pengendalian lampu penerangan jalan yang jumlahnya ratusan ribu.}, dimana
 masing-masing titik membutuhkan setidaknya satu board, perbedaan harga
 Rp.~10.000,- akan menjadikan beda sepuluh juta rupiah. Padahal ada board yang
 lebih bagus tetapi harganya berbeda cukup signifikan. Sebagai contoh, ada salah
-satu board yang berharga Rp.~300.000,- untuk satu unitnya. Harapannya tentu
-saja adalah harga ini akan turun sejalan dengan meningkatnya kemampuan
+satu board (Puck.js) yang berharga Rp.~300.000,- untuk satu unitnya. Harapannya
+tentu saja adalah harga ini akan turun sejalan dengan meningkatnya kemampuan
 teknologi dan jumlah pengguna.
 
+Untuk sistem yang dikembangkan, pilihannya adalah board yang berbasis NodeMCU.
 
 [Foto NodeMCU]
 
 \section{Sensor}
+Ada beberapa sensor yang dapat digunakan untuk mendeteksi variabel cuaca;
+temperatur dan kelembaban. Pada bagian ini akan dibahas pemilihan sensor
+tersebut.
+
 \subsection{DHT11}
+Sensor DHT11 merupakan sensor yang paling sering dicontohkan untuk aplikasi IoT
+dalam hal cuaca. Sensor ini memiliki harga yang sangat murah dan mudah
+digunakan. Ada banyak tutorial mengenai penggunaan sensor DHT11 ini.
+
+Salah satu masalah yang ditemukan dalam implementasi adalah kehandalan dan
+akurasi dari sensor DHT11. Seringkali aplikasi tidak dapat membaca data dari
+sensor DHT11 ini. Hal ini kemungkinan disebabkan oleh lambatnya respon dari
+sensor DHT11.
+
 \subsection{DHT22}
+Sensor DHT22 merupakan pengganti langsung dari sensor DHT11. Dari segi kode
+pemrograman, tidak ada yang harus diubah secara signifikan. Hanya jenis sensor
+yang perlu diberitahukan di awal program.
+
+Kinerja sensor DHT22 ini lebih baik daripada sensor DHT11. Dia lebih cepat
+responnya dan lebih akurat.
+
+Hal yang menyebabkan sensor DHT11 lebih populer dari sensor DHT22 adalah
+harganya. Sensor DHT22 harganya dua kali lipat sensor DHT11. (Harga sensor
+DHT22 berkisar dari Rp.~40.000,- sampai dengan Rp.~70.000,-.) Ketersediaan
+sensor DHT22 ini juga menjadi masalah tersendiri.
+
+\subsection{Sensor lain}
+Ada sensor temperatur dan kelembaban yang lebih bagus dari DHT22, tetapi
+sayangnya harganya jauh lebih mahal. (Diberitakan harganya mencapai Rp.~200
+ribu.)
 
 \section{Jaringan}
+Kata ``internet'' dalam {\em Internet of Things} bermakna jaringan. Perangkat
+IoT tidak perlu harus terhubung ke internet, tetapi perlu terhubung ke sebuah
+jaringan. (Boleh jadi ini jaringan tertutup.)
 
-\section{Aplikasi}
+Ada beberapa protokol yang dapat menghubungkan perangkat ke jaringan. Protokol
+yang paling banyak digunakan adalah TCP/IP. Lebih spesifik lagi, untuk jaringan
+nirkabel (wireless), protokol yang banyak digunakan adalah WiFi (IEEE 802.4).
+Protokol Bluetooth (lebih spesifik lagi BLE) mulai banyak digunakan pula pada
+beberapa aplikasi yang lingkup fisiknya lebih dekat. Untuk aplikasi yang
+menghubungkan perangkat ke jaringan yang lebih jauh, protokol LoRa sedang naik
+daun.
+
+\subsection{WiFi}
+Pada makalah ini digunakan protokol WiFi dikarenakan board yang digunakan sudah
+memiliki fitur tersebut. {\em Access point} (AP) berbasis WiFi ada dimana-mana
+sehingga sistem lebih mudah dan cepat dipasang.
+
+Masalah dengan WiFi adalah penggunaan dayanya yang besar sehingga memboroskan
+batre jika perangkat tersebut akan digunakan dengan menggunakan batre.
+
+\subsection{Bluetooth}
+Protokol Bluetooh (atau lebih tepatnya BLE, Bluetooth Low Energy) mulai banyak
+diimplementasikan di beberapa aplikasi IoT. Sebagai contoh, {\em iBeacon}
+menggunakan Bluetooth sebagai protokol untuk berkomunikasi antar perangkat. 
+Bluetooth cocok digunakan untuk aplikasi yang jaraknya dekat.
+
+Masalah dengan Bluetooth adalah belum terintegrasinya Bluetooth ke dalam
+berbagai boards yang murah. Sebagai contoh, Puck.js memiliki harga US~30 ke
+atas.
+
+\section{Desain Aplikasi}
 \subsection{Sisi Sensor}
 \subsection{Sisi Server}
 

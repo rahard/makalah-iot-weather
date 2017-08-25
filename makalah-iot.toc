@@ -3,8 +3,11 @@
 \contentsline {section}{\numberline {3}Sensor}{3}{section.3}
 \contentsline {subsection}{\numberline {3.1}DHT11}{3}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}DHT22}{3}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Sensor lain}{3}{subsection.3.3}
 \contentsline {section}{\numberline {4}Jaringan}{3}{section.4}
-\contentsline {section}{\numberline {5}Aplikasi}{3}{section.5}
-\contentsline {subsection}{\numberline {5.1}Sisi Sensor}{3}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Sisi Server}{3}{subsection.5.2}
-\contentsline {section}{\numberline {6}Penutup}{3}{section.6}
+\contentsline {subsection}{\numberline {4.1}WiFi}{4}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Bluetooth}{4}{subsection.4.2}
+\contentsline {section}{\numberline {5}Desain Aplikasi}{4}{section.5}
+\contentsline {subsection}{\numberline {5.1}Sisi Sensor}{4}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Sisi Server}{4}{subsection.5.2}
+\contentsline {section}{\numberline {6}Penutup}{4}{section.6}
